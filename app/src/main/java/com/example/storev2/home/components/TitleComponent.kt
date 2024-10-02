@@ -1,11 +1,10 @@
-package com.example.storev2.HomePage.Components
+package com.example.storev2.home.components
 
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,11 +26,10 @@ fun TitleComponent (modifier: Modifier=Modifier){
         fontSize = 30.sp,
         fontFamily = FontFamily(Font(R.font.ubuntu_medium)) ,
         textAlign = TextAlign.Start,
-        modifier=modifier
+        lineHeight = 39.sp ,
+        modifier= modifier
             .padding(start =40.dp)
             .fillMaxWidth()
-            .height(78.dp)
-
     )
 
 }

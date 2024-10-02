@@ -1,4 +1,4 @@
-package com.example.storev2.HomePage.Components
+package com.example.storev2.home.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.example.storev2.R
 
 @Composable
-fun HomeTopBar(
+fun TopBarComponent(
     modifier: Modifier = Modifier
 ) {
     Row(

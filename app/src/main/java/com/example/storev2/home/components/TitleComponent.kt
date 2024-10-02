@@ -21,6 +21,7 @@ import com.example.storev2.R
 
 @Composable
 fun TitleComponent (modifier: Modifier=Modifier){
+    // Todp
     Text(
         text = "Hey, buy the best Electronic Gadgets",
         fontSize = 30.sp,

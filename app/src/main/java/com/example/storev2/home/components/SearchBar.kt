@@ -28,7 +28,7 @@ import com.example.storev2.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SearchBarComponent(modifier: Modifier = Modifier) {
+fun SearchBar(modifier: Modifier = Modifier) {
     var text by rememberSaveable { mutableStateOf("") }
     var active by rememberSaveable { mutableStateOf(false) }
     val items = remember { mutableStateListOf<String>() }

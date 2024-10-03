@@ -17,7 +17,7 @@ import com.example.storev2.home.data.Categories
 import com.example.storev2.home.data.ListOfCategories
 
 @Composable
-fun ShowCategoriesComponent(
+fun ShowCategories(
     selectedCategoryId: String,
     onCategoryClicked: (String) -> Unit,
     modifier: Modifier = Modifier,
@@ -33,7 +33,7 @@ fun ShowCategoriesComponent(
         Spacer(Modifier.height(40.dp))
         LazyRow {
             items(ListOfCategories) { item: Categories ->
-                CategoryComponent(
+                Category(
                     onClick = {
                         onCategoryClicked(item.id)
                     },

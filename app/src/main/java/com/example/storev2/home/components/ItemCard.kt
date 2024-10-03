@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -29,7 +28,7 @@ import androidx.compose.ui.unit.sp
 import com.example.storev2.R
 
 @Composable
-fun ItemCardComponent(
+fun ItemCard(
     Title:String,
     Image:Int,
     modifier: Modifier=Modifier
@@ -94,7 +93,7 @@ fun ItemCardPreview(modifier: Modifier=Modifier){
             .fillMaxSize()
             .background(Color.White)
     ) {
-        ItemCardComponent("Wirless Headsets",R.drawable.headset)
+        ItemCard("Wirless Headsets",R.drawable.headset)
     }
 }
 @Preview(device = "spec:parent=pixel_7,orientation=landscape")
@@ -105,6 +104,6 @@ fun ItemCardPreviewlan(modifier: Modifier=Modifier){
             .fillMaxSize()
             .background(Color.White)
     ) {
-        ItemCardComponent("Wirless Headsets",R.drawable.headset)
+        ItemCard("Wirless Headsets",R.drawable.headset)
     }
 }

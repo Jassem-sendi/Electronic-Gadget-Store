@@ -10,4 +10,7 @@
     <color name="sEARC" />
     <color name="SearchColor">#CDCDCD</color>
     <color name="CardColor">#272727</color>
+    <color name="CatergorieColor">#CDCDCD</color>
+    <color name="SelectedCat">#272727</color>
+    <color name="ProductColor">#CDCDCD</color>
 </resources>

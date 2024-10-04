@@ -26,24 +26,33 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.storev2.Navigation.Routes
 import com.example.storev2.R
 import com.example.storev2.home.data.Product
 
 @Composable
 fun ProductCard(
+    navController: NavController,
     product: Product,
     modifier: Modifier=Modifier
     ){
     Card (
         colors = CardDefaults.cardColors(
-            colorResource(R.color.ProductColor)
+            colorResource(R.color.ProductColor).copy(alpha = 0.3f)
         ),
         shape = RoundedCornerShape(30.dp) ,
         modifier=modifier
             .padding(21.dp)
             .width(164.dp)
             .height(244.dp)
-            .clickable {  }
+            .clickable {
+                navController.navigate(
+                    Routes.ProductScreen(
+                        product.name
+                    )
+                )
+            }
     ){
         Image(
             painter = painterResource(product.image),
@@ -89,6 +98,6 @@ fun ProductCardPreview(){
             .fillMaxSize()
             .background(Color.White)
     ) {
-        ProductCard(     Product("Windows Tafdgdfgfdgblet", 699.99, R.drawable.tabletimage, "Tablet with full Windows OS.", "4"),)
+       // ProductCard(     Product("Windows Tafdgdfgfdgblet", 699.99, R.drawable.tabletimage, "Tablet with full Windows OS.", "4"),)
     }
 }

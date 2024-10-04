@@ -8,7 +8,10 @@ data class Categories(
     val catName: String,
     val catImage: Int
 )
-
+data class TechInfo(
+    val icon:Int,
+    val description: String
+)
 data class Product(
     val name: String,
     val price: Double,
@@ -21,6 +24,11 @@ val filter = listOf(
     "featured",
     "must see",
     "top selected"
+)
+val listoftechInfo= listOf(
+    TechInfo(R.drawable.litening,"40 hours litening"),
+    TechInfo(R.drawable.litening,"5m Power up fuel"),
+    TechInfo(R.drawable.litening,"Call control")
 )
 val ListOfCategories = listOf(
     Categories("0", "All", R.drawable.alliconcat),

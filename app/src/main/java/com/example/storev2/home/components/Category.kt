@@ -41,7 +41,7 @@ fun Category(
     catImage: Int ,
     isSelected: Boolean ,
     modifier: Modifier = Modifier ,
-    onClick: () -> Unit
+    onClick:  () -> Unit
 ) {
 
 
@@ -49,7 +49,7 @@ fun Category(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier=modifier
-            .padding(10.dp)
+            .padding(end = 10.dp)
             .clickable {
                 onClick()
             }
@@ -88,9 +88,9 @@ fun Category(
             text = catName,
             fontSize = 15.sp,
             textAlign = TextAlign.Center,
-            maxLines = 2,
+            maxLines =2 ,
             overflow = TextOverflow.Ellipsis,
-            modifier=Modifier.widthIn(max = 100.dp)
+            modifier=Modifier.widthIn(max = 70.dp)
         )
     }
 }

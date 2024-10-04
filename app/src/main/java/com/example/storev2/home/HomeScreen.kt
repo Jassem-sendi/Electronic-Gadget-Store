@@ -69,6 +69,7 @@ fun HomeScreen(
                     SearchBar()
                     Spacer(Modifier.height(40.dp))
                     ShowCategories(
+                        navController=navController,
                         selectedCategoryId = selectedCategoryId,
                         onCategoryClicked = { categoryId ->
                             selectedCategoryId = categoryId

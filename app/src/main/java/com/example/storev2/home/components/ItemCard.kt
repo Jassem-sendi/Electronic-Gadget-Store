@@ -1,11 +1,12 @@
-package com.example.storev2.HomePage.Components
+package com.example.storev2.home.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -38,12 +39,13 @@ fun ItemCard(
         elevation = CardDefaults.cardElevation(5.dp),
         modifier = modifier
             .fillMaxWidth()
+            .aspectRatio(348f / 248f)
+            .fillMaxHeight()
             .padding(40.dp)
-
     ) {
         Box (
             Modifier
-                .height(248.dp)
+                .fillMaxSize()
         ) {
                 Image(
                     painter = painterResource(Image),
@@ -58,12 +60,13 @@ fun ItemCard(
                     .background(
                         brush = Brush.verticalGradient(
                             colors = listOf(
-                                Color.Transparent,
-                                Color.White.copy(alpha = 0.9f),
-                            ),
+                                Color.Transparent ,
+                                Color.White.copy(alpha = 0.9f) ,
+                            ) ,
                             startY = 490f
                         )
-                    ).blur(50.dp)
+                    )
+                    .blur(50.dp)
             )
             Box (
                 Modifier
@@ -86,7 +89,9 @@ fun ItemCard(
 @Composable
 fun ItemCardPreview(modifier: Modifier=Modifier){
     Box  (
-        Modifier.fillMaxSize().background(Color.White)
+        Modifier
+            .fillMaxSize()
+            .background(Color.White)
     ) {
         ItemCard("Wirless Headsets",R.drawable.headset)
     }
@@ -95,7 +100,9 @@ fun ItemCardPreview(modifier: Modifier=Modifier){
 @Composable
 fun ItemCardPreviewlan(modifier: Modifier=Modifier){
     Box  (
-        Modifier.fillMaxSize().background(Color.White)
+        Modifier
+            .fillMaxSize()
+            .background(Color.White)
     ) {
         ItemCard("Wirless Headsets",R.drawable.headset)
     }

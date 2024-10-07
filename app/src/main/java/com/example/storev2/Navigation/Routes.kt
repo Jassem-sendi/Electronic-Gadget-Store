@@ -1,7 +1,7 @@
 package com.example.storev2.Navigation
 import kotlinx.serialization.Serializable
 
-class Routes {
+object Routes {
     @Serializable
     object HomeScreen
     @Serializable

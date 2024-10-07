@@ -22,10 +22,11 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun ShowCategories(
-    navController: NavController,
+//    navController: NavController,
     selectedCategoryId: String,
     onCategoryClicked: (String) -> Unit,
     modifier: Modifier = Modifier,
+    onNavigate:(String)->Unit
 ) {
     Column(modifier = modifier) {
         Text(
@@ -43,9 +44,11 @@ fun ShowCategories(
                 Category(
                     onClick = {
                         onCategoryClicked(item.id)
-                            navController.navigate(Routes.CategorieScreen(
-                                item.id
-                            ))
+//                            navController.navigate(Routes.CategorieScreen(
+//                                item.id
+//                            )
+                              //                            )
+                        onNavigate(item.id)
                     },
                     catName = item.catName ,
                     catImage = item.catImage ,

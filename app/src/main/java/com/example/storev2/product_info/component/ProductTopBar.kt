@@ -29,10 +29,10 @@ import com.example.storev2.R
 
 
 @Composable
-fun TopBar(
-    navController: NavController,
+fun ProductTopBar(
     image:Int,
-    modifier: Modifier=Modifier
+    modifier: Modifier=Modifier,
+    comeBack:()->Unit
 ){
     Column (
         modifier=modifier
@@ -47,7 +47,7 @@ fun TopBar(
 
         ) {
             IconButton(onClick = {
-                navController.popBackStack()
+                comeBack()
             }) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
@@ -59,7 +59,7 @@ fun TopBar(
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
-            IconButton(onClick = { /* do something */ }) {
+            IconButton(onClick = {  }) {
                 Icon(
                     painter = painterResource(R.drawable.items) ,
                     contentDescription = "Localized description"
@@ -72,31 +72,6 @@ fun TopBar(
             contentScale = ContentScale.Fit,
             modifier = Modifier
                 .fillMaxSize()
-
-
-
         )
-    }
-}
-@Preview(device = "id:pixel_7_pro")
-@Composable
-fun TopBarPreview(modifier: Modifier=Modifier){
-    Box (
-        Modifier
-            .fillMaxSize()
-            .background(Color.White)
-    ) {
-       // TopBar()
-    }
-}
-@Preview(device = "spec:parent=pixel_7_pro,orientation=landscape")
-@Composable
-fun TopBarPreviewland(modifier: Modifier=Modifier){
-    Box (
-        Modifier
-            .fillMaxSize()
-            .background(Color.White)
-    ) {
-        //TopBar()
     }
 }

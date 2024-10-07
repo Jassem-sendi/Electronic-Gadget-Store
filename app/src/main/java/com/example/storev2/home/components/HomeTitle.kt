@@ -20,7 +20,7 @@ import com.example.storev2.R
 
 
 @Composable
-fun Title (modifier: Modifier=Modifier){
+fun HomeTitle (modifier: Modifier=Modifier){
     Text(
         text = "Hey, buy the best Electronic Gadgets",
         fontSize = 30.sp,
@@ -40,7 +40,7 @@ fun TitleComponentPreview (){
         .fillMaxSize()
         .background(Color.White)
     ) {
-        Title()
+        HomeTitle()
     }
 }
 @Preview(device = "spec:parent=pixel_5,orientation=landscape")
@@ -50,6 +50,6 @@ fun TitleComponentPreviewLand (){
         .fillMaxSize()
         .background(Color.White)
     ) {
-        Title()
+        HomeTitle()
     }
 }

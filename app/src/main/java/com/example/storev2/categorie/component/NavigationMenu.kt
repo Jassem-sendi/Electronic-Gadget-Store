@@ -58,14 +58,3 @@ fun NavigationMenu(
     }
 }
 
-@Composable
-@Preview(device = "id:pixel_7")
-fun CategoriePagePreview() {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.White)
-    ) {
-        //ShowProducts(2 , "5")
-    }
-}

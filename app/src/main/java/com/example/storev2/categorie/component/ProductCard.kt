@@ -33,9 +33,9 @@ import com.example.storev2.home.data.Product
 
 @Composable
 fun ProductCard(
-    navController: NavController,
     product: Product,
-    modifier: Modifier=Modifier
+    modifier: Modifier=Modifier,
+    onNavigate:(String)->Unit
     ){
     Card (
         colors = CardDefaults.cardColors(
@@ -44,14 +44,9 @@ fun ProductCard(
         shape = RoundedCornerShape(30.dp) ,
         modifier=modifier
             .padding(21.dp)
-            .width(164.dp)
             .height(244.dp)
             .clickable {
-                navController.navigate(
-                    Routes.ProductScreen(
-                        product.name
-                    )
-                )
+                onNavigate(product.categoryId)
             }
     ){
         Image(
@@ -90,14 +85,3 @@ fun ProductCard(
         )
     }
     }
-@Preview
-@Composable
-fun ProductCardPreview(){
-    Box (
-        Modifier
-            .fillMaxSize()
-            .background(Color.White)
-    ) {
-       // ProductCard(     Product("Windows Tafdgdfgfdgblet", 699.99, R.drawable.tabletimage, "Tablet with full Windows OS.", "4"),)
-    }
-}

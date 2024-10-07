@@ -22,14 +22,14 @@ import androidx.compose.ui.unit.sp
 import com.example.storev2.R
 
 @Composable
-fun ButtonCustom(modifier: Modifier=Modifier){
+fun AddToCardButton(modifier: Modifier=Modifier){
   Button(
       onClick = {},
       colors = ButtonDefaults.buttonColors(colorResource(R.color.CardColor)),
       shape = RoundedCornerShape(15.dp) ,
       modifier = modifier
           .fillMaxWidth()
-          .height(55.dp)
+
           .padding(horizontal = 40.dp)
   ) {
         Text(
@@ -39,26 +39,4 @@ fun ButtonCustom(modifier: Modifier=Modifier){
             fontWeight = FontWeight(500)
         )
   }
-}
-@Preview(device = "id:pixel_7_pro")
-@Composable
-fun ButtonPreview(modifier: Modifier=Modifier){
-    Box (
-        Modifier
-            .fillMaxSize()
-            .background(Color.White)
-    ) {
-        ButtonCustom()
-    }
-}
-@Preview(device = "spec:parent=pixel_7_pro,orientation=landscape")
-@Composable
-fun ButtonPreviewland(modifier: Modifier=Modifier){
-    Box (
-        Modifier
-            .fillMaxSize()
-            .background(Color.White)
-    ) {
-        ButtonCustom()
-    }
 }

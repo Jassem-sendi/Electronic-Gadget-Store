@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -14,23 +15,20 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import androidx.navigation.NavHost
 import com.example.storev2.home.components.ItemCard
-import com.example.storev2.home.components.NavDrawer
 import com.example.storev2.home.components.SearchBar
 import com.example.storev2.home.components.ShowCategories
-import com.example.storev2.home.components.Title
-import com.example.storev2.home.components.TopBar
+import com.example.storev2.home.components.HomeTitle
+import com.example.storev2.home.components.HomeTopBar
 import com.example.storev2.home.data.ListOfProducts
 
 @Composable
 fun HomeScreen(
-    navController: NavController,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onNavigate:(String)->Unit
 ) {
 
-    var grid = 0
+    var grid by remember { mutableIntStateOf( 0) }
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -62,19 +60,20 @@ fun HomeScreen(
         ) {
             item(span = { GridItemSpan(grid) }) {
                Column {
-                    //NavDrawer()
-                    TopBar {  }
-                    Title()
+
+                    HomeTopBar {  }
+                    HomeTitle()
                     Spacer(Modifier.height(30.dp))
                     SearchBar()
                     Spacer(Modifier.height(40.dp))
                     ShowCategories(
-                        navController=navController,
                         selectedCategoryId = selectedCategoryId,
                         onCategoryClicked = { categoryId ->
                             selectedCategoryId = categoryId
                         }
-                    )
+                    ){
+                        onNavigate(selectedCategoryId)
+                    }
                 }
             }
             items(products) { item ->

@@ -64,7 +64,7 @@ fun NavDrawer(
         } ,
         drawerState = drawerState
     ) {
-        TopBar() {
+        HomeTopBar() {
             scope.launch {
                 drawerState.apply {
                     if (isClosed) open() else close()

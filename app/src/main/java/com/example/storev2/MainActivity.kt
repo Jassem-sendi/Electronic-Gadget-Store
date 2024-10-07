@@ -5,7 +5,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -23,19 +29,34 @@ class MainActivity : ComponentActivity() {
             StoreV2Theme {
                 val navConroler = rememberNavController()
                 NavHost(
-                    navController = navConroler,
+                    navController = navConroler ,
                     startDestination = Routes.HomeScreen
                 ) {
                     composable<Routes.HomeScreen> {
-                        HomeScreen(navController = navConroler)
+                        HomeScreen() {
+                            navConroler.navigate(
+                                Routes.CategorieScreen(it)
+                            )
+                        }
                     }
                     composable<Routes.CategorieScreen> {
                         val arg = it.toRoute<Routes.CategorieScreen>()
-                        CategoriePage(navConroler,arg.id)
+                        CategoriePage(
+                            arg.id ,
+                            comeBack = {
+                                navConroler.popBackStack()
+                            }
+                        ) {
+                            navConroler.navigate(
+                                Routes.ProductScreen(it)
+                            )
+                        }
                     }
                     composable<Routes.ProductScreen> {
                         val arg = it.toRoute<Routes.ProductScreen>()
-                        ProductDetails(navConroler,arg.name)
+                        ProductDetails(arg.name) {
+                            navConroler.popBackStack()
+                        }
                     }
 
                 }
@@ -44,4 +65,5 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
 

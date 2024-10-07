@@ -6,35 +6,18 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.ModalDrawerSheet
-import androidx.compose.material3.ModalNavigationDrawer
-import androidx.compose.material3.NavigationDrawerItem
-import androidx.compose.material3.NavigationDrawerItemDefaults
-import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.storev2.R
-import com.example.storev2.home.data.ListOfCategories
-import kotlinx.coroutines.launch
 
 @Composable
-fun TopBar(
+fun HomeTopBar(
     modifier: Modifier = Modifier ,
     onClick:()->Unit
 
@@ -45,9 +28,9 @@ fun TopBar(
                 .fillMaxWidth()
                 .padding(36.dp)
         ) {
-            IconButton(onClick = {
-                    onClick()
-            }) {
+            IconButton(
+                onClick=onClick
+            ) {
                 Icon(
                     painter = painterResource(R.drawable.menuicon) ,
                     contentDescription = null ,
@@ -68,4 +51,4 @@ fun TopBar(
             }
         }
     }
-//}
+
